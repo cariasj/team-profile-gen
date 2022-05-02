@@ -1,0 +1,38 @@
+
+:root {
+    --primary: rgb(96, 67, 111);
+    --secondary: rgb(244, 242, 242);
+}
+
+#navbar {
+    background-color: var(--primary);
+    color: var(--secondary);
+    
+}
+
+.navbar-brand {
+    font-size: 55px;
+}
+
+
+.card-header {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-style: double;
+
+    
+}
+
+.card-body {
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-style: double;
+    border-radius: 10px;
+}
+
+.container {
+    margin: 100px auto;
+    justify-content: space-evenly;
+    display: flex;
+    
+}
