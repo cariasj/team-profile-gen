@@ -13,29 +13,34 @@ function employee(passedVariables) {
     }
 
     return `
-    <div class="card">
-                <div class="card-head">
-                    <div class="card-name"> ${name} </div>
-                    <div class="card-title"> ${passedVariables.constructor.name} </div>
-                </div>
-                <div class="card-body">
-                    <div class="id">ID: ${id}</div>
-                    <div class="email">Email: <a href="mailto:${email}">${email}</a></div>
-                    <div class="variable">${variable}</div>
-                </div>
-            </div>
+
+    <div class="col-4 mt-4">
+    <div class="card h-100">
+        <div class="card-header" >
+         <h2>${name}</h2>
+            <h5>${passedVariables.constructor.name}</h5><i class="material-icons">workspace_premium</i>
+        </div>
+
+        <div class="card-body">
+            <p class="id">ID: ${id}</p>
+            <p class="email">Email: <a href="mailto:${email}">${email}</a></p>  
+            <div class="variable">${variable}</div>
+        </div>
+
+    </div>
+</div>
     `
 }
 
 function qnty(objectArray) {
 
-    let ret = '' 
+    let array = '' 
     console.log(objectArray)
 
     for (i = 0; i < objectArray.length; i++) {
-        ret += employee(objectArray[i])
+        array += employee(objectArray[i])
     }
-    return ret;
+    return array;
 }
 
 module.exports = function (objectArray) {
@@ -45,21 +50,28 @@ module.exports = function (objectArray) {
     <html lang="en">
     
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Team Profile Generator</title>
-        <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+    crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     </head>
     
     <body>
     
-        <header>
-            Team Profile
-        </header>
+    <header>
+        <nav class="navbar" id="navbar">
+            <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Team Profiles</span>
+        </nav>
+    </header>
     
         <main>
-            
+        <div class="container">
+        <div class="row justify-content-center" id="team-cards">
             ${qnty(objectArray)}
     
         </main>
